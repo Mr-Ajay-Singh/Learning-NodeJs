@@ -1,0 +1,81 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <%- include('../includes/navigation.ejs') %>
+    <main>
+        <% if(prods.length > 0){ %>
+        <div class="grid">
+            <% for (let product of prods) { %>
+                <article class ="card product-item">
+                    <header class="card__header">
+                        <h1 class="product__title"><%= product.title %></h1>
+                        <div class="card__image">
+                            <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80" alt="Image" style="width:50x;height:50px;">
+                            <div class="card__content">
+                                <h2 class="product__price">$19.99</h2>
+                                <p class="product__description">This Is Description</p>
+                            </div>
+                            <div class="card_actions">
+                                <button class="btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </header>
+                </article>
+                <% } %>
+            </div>
+        <% } else { %>
+            <h1>No Product Exist</h1>
+        <% } %>
+    </main>
+
+<%- include('../includes/end.ejs') %>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="main-header__nav">
+            <ul class="main-header__item-list">
+                <li class="main-header__item"><a href = "/" class="active">Shop</a></li>
+                <li class="main-header__item"><a href = "/admin/add-product">Add Product</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <% if(prods.length > 0){ %>
+        <div class="grid">
+            <% for (let product of prods) { %>
+                <article class ="card product-item">
+                    <header class="card__header">
+                        <h1 class="product__title"><%= product.title %></h1>
+                        <div class="card__image">
+                            <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80" alt="Image" style="width:50x;height:50px;">
+                            <div class="card__content">
+                                <h2 class="product__price">$19.99</h2>
+                                <p class="product__description">This Is Description</p>
+                            </div>
+                            <div class="card_actions">
+                                <button class="btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </header>
+                </article>
+                <% } %>
+            </div>
+        <% } else { %>
+            <h1>No Product Exist</h1>
+        <% } %>
+    </main>
+
+</body>
+</html> -->
